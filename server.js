@@ -9,7 +9,7 @@ var articles = {
     'article-one':{},
     'article-two':{}
 };
-app.get('/',function(req,res)
+app.get('/http://alihasanmulji.imad.hasura-app.io/',function(req,res)
 {
    res.send("Hey"); 
 });
