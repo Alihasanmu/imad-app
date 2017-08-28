@@ -1,7 +1,9 @@
 console.log('Loaded!');
-
+var nameInput=document.getElementById("name");
+  var name=nameInput.value;
+  var submit=document.getElementById("submit_btn");
 var button=document.getElementById("counter");
-button.onclick=function()
+submit.onclick=function()
 {
     var request= new XMLHttpRequest();
     request.onreadystatechange=function()
@@ -10,23 +12,7 @@ button.onclick=function()
         {
     if(request.status===200)
     {
-        var counter1=request.responseText;
-        var span=document.getElementById('count');
-        span.innerHTML=counter1.toString();
-    }
-        }
-    };
-  request.open('GET','http://alihasanmulji.imad.hasura-app.io/counter',true);
-  request.send(null);
-};
-
-
-  var nameInput=document.getElementById("name");
-  var name=nameInput.value;
-  var submit=document.getElementById("submit_btn");
-  submit.onclick=function()
-  {
-      var names=['name1','name2','name3','name4'];
+       var names=['name1','name2','name3','name4'];
       var list="";
       for(var i=0;i<names.length;i++)
       {
@@ -34,6 +20,11 @@ button.onclick=function()
       }
       var ul=document.getElementById("namesList");
       ul.innerHTML=list;
-  };
-  
+    }
+        }
+    };
+  request.open('GET','http://alihasanmulji.imad.hasura-app.io/submit-name?name ='+name,true);
+  request.send(null);
+};
+
 
