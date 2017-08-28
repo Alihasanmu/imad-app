@@ -1,11 +1,12 @@
 console.log('Loaded!');
-var nameInput=document.getElementById("name");
-  var name=nameInput.value;
+
   var submit=document.getElementById("submit_btn");
 var button=document.getElementById("counter");
 submit.onclick=function()
 {
     var request= new XMLHttpRequest();
+    var nameInput=document.getElementById("name");
+  var name=nameInput.value;
     request.onreadystatechange=function()
     {
         if(request.readyState===XMLHttpRequest.DONE)
